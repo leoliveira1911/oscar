@@ -2,11 +2,13 @@ import React, {useState} from 'react'
 import Category from '../components/Category'
 import Layout from '../components/Layout'
 import Nominated from '../components/Nominated'
+import axios from 'axios'
 
 function Home() {
 	const selection: {category: String; nominee: string}[] = []
+	const user = localStorage.getItem('user')
 
-	function selectNomenee(nominee: string, category: string) {
+	function selectNominee(nominee: string, category: string) {
 		let test = false
 		selection.forEach(el => {
 			if (el.category === category) {
@@ -43,8 +45,33 @@ function Home() {
 			}
 		}
 		console.log(highlight)
+		save(category, nominee)
 
 		return selection
+	}
+
+	async function getVotes(user: string) {
+		const userGet = user
+		console.log('GET TASKS NA ÁREA, BEATCHES')
+		axios
+			.get('http://localhost:3002/api/get', {
+				params: {
+					user: userGet,
+				},
+			})
+			.then(resp => {
+				console.log(resp.data)
+			})
+	}
+	async function save(category: string, nominee: string) {
+		await axios.post('http://localhost:3002/api/create', {
+			user,
+			category,
+			nominee,
+		})
+		if (user) {
+			getVotes(user)
+		}
 	}
 
 	return (
@@ -54,25 +81,25 @@ function Home() {
 					name="Titanic"
 					img="/titanic.jpg"
 					category="Melhor Filme"
-					select={selectNomenee}
+					select={selectNominee}
 				/>
 				<Nominated
 					name="Avatar: O caminho da água"
 					img="/avatar.jpg"
 					category="Melhor Filme"
-					select={selectNomenee}
+					select={selectNominee}
 				/>
 				<Nominated
 					name="Batman"
 					img="/batman.jpg"
 					category="Melhor Filme"
-					select={selectNomenee}
+					select={selectNominee}
 				/>
 				<Nominated
 					name="teste1"
 					img="/logo192.png"
 					category="Melhor Filme"
-					select={selectNomenee}
+					select={selectNominee}
 				/>
 			</Category>
 			<Category title="Melhor Ator">
@@ -80,25 +107,77 @@ function Home() {
 					name="Leonardo di Caprio"
 					category="Melhor Ator"
 					img="/titanic.jpg"
-					select={selectNomenee}
+					select={selectNominee}
 				/>
 				<Nominated
 					name="RDJ"
 					category="Melhor Ator"
 					img="/logo192.png"
-					select={selectNomenee}
+					select={selectNominee}
 				/>
 				<Nominated
 					name="ABC"
 					category="Melhor Ator"
 					img="/logo192.png"
-					select={selectNomenee}
+					select={selectNominee}
 				/>
 				<Nominated
 					name="DEF"
 					category="Melhor Ator"
 					img="/logo192.png"
-					select={selectNomenee}
+					select={selectNominee}
+				/>
+			</Category>
+			<Category title="Melhor Atriz">
+				<Nominated
+					name="Atriz1"
+					category="Melhor Atriz"
+					img="/titanic.jpg"
+					select={selectNominee}
+				/>
+				<Nominated
+					name="Atriz2"
+					category="Melhor Atriz"
+					img="/logo192.png"
+					select={selectNominee}
+				/>
+				<Nominated
+					name="Atriz3"
+					category="Melhor Atriz"
+					img="/logo192.png"
+					select={selectNominee}
+				/>
+				<Nominated
+					name="Atriz4"
+					category="Melhor Atriz"
+					img="/logo192.png"
+					select={selectNominee}
+				/>
+			</Category>
+			<Category title="Melhor Música">
+				<Nominated
+					name="Música1"
+					category="Melhor Música"
+					img="/titanic.jpg"
+					select={selectNominee}
+				/>
+				<Nominated
+					name="Música2"
+					category="Melhor Música"
+					img="/logo192.png"
+					select={selectNominee}
+				/>
+				<Nominated
+					name="Música3"
+					category="Melhor Música"
+					img="/logo192.png"
+					select={selectNominee}
+				/>
+				<Nominated
+					name="Música4"
+					category="Melhor Música"
+					img="/logo192.png"
+					select={selectNominee}
 				/>
 			</Category>
 		</Layout>

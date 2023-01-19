@@ -65,7 +65,7 @@ function Home() {
 		const userGet = user
 		console.log('GET TASKS NA ÁREA, BEATCHES')
 		axios
-			.get('http://localhost:3002/api/get', {
+			.get('https://tame-calf-kimono.cyclic.app/api/get', {
 				params: {
 					user: userGet,
 				},
@@ -77,7 +77,7 @@ function Home() {
 			})
 	}
 	async function save(category: string, nominee: string) {
-		await axios.post('http://localhost:3002/api/create', {
+		await axios.post('https://tame-calf-kimono.cyclic.app/api/create', {
 			user,
 			category,
 			nominee,

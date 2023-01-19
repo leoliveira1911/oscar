@@ -24,7 +24,7 @@ export default function MyBets() {
 		const userGet = user
 		console.log('GET TASKS NA ÁREA, BEATCHES')
 		await axios
-			.get('http://localhost:3002/api/get', {
+			.get('https://tame-calf-kimono.cyclic.app/api/get', {
 				params: {
 					user: userGet,
 				},

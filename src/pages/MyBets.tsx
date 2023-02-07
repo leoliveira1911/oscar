@@ -24,7 +24,7 @@ export default function MyBets() {
 		const userGet = user
 		console.log('GET TASKS NA ÁREA, BEATCHES')
 		await axios
-			.get('https://tame-calf-kimono.cyclic.app/api/get', {
+			.get('https://tame-calf-kimono.cyclic.app/api/getVotes', {
 				params: {
 					user: userGet,
 				},
@@ -32,6 +32,7 @@ export default function MyBets() {
 			.then(data => setVotes(data.data))
 	}
 	console.log('votes' + votes)
+
 	function renderVotes(
 		arrayOfVotes: {
 			id: number

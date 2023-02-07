@@ -4,6 +4,7 @@ interface NominatedProps {
 	name: string
 	img: any
 	category: string
+	label?: string
 	select?(e: string, f: string): void
 }
 
@@ -21,7 +22,12 @@ export default function Nominated(props: NominatedProps) {
         hover:bg-opacity-100
 
     `}>
-			<div className="flex flex-1 justify-center">{props.name}</div>
+			<div className="flex flex-1 justify-center">
+				<div className="flex flex-col">
+					<h1 className="text-lg">{props.name}</h1>
+					<h2 className="text-sm">{props.label}</h2>
+				</div>
+			</div>
 			<img
 				src={props.img}
 				width="100"

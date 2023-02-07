@@ -13,10 +13,10 @@ export default function Login() {
 				// This gives you a Google Access Token. You can use it to access the Google API.
 				const credential = GoogleAuthProvider.credentialFromResult(result)
 				const token = credential?.accessToken
-				// The signed-in user info.
+				// Saves a user on the browser
 				const user = result.user
-				// ...
 				localStorage.setItem('user', user.uid)
+				//  Saves the user UID and userName in back end.
 				if (user.displayName) {
 					localStorage.setItem('userName', user.displayName)
 				}
@@ -38,6 +38,7 @@ export default function Login() {
 			return navigate('/')
 		}
 	}
+
 	return (
 		<div
 			style={{

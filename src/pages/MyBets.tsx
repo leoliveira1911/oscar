@@ -39,6 +39,7 @@ export default function MyBets() {
 			user: string
 			category: string
 			nominee: string
+			img: string
 		}[]
 	) {
 		return arrayOfVotes.map(vote => {
@@ -49,7 +50,7 @@ export default function MyBets() {
 					<Nominated
 						category={vote.category}
 						name={vote.nominee}
-						img={`/${vote.nominee}.jpg`}
+						img={vote.img}
 					/>
 				</Category>
 			)

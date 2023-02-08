@@ -5,7 +5,7 @@ interface NominatedProps {
 	img: any
 	category: string
 	label?: string
-	select?(e: string, f: string): void
+	select?(e: string, f: string, i: string): void
 }
 
 export default function Nominated(props: NominatedProps) {
@@ -13,7 +13,7 @@ export default function Nominated(props: NominatedProps) {
 		<div
 			id={props.name}
 			onClick={() => {
-				props.select?.(props.name, props.category)
+				props.select?.(props.name, props.category, props.img)
 			}}
 			className={`
 			${props.category}

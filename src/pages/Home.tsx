@@ -10,6 +10,7 @@ function Home() {
 	// const selection: {category: String; nominee: string}[] = []
 	const oscar = Oscar
 	const user = localStorage.getItem('user')
+	const userName = localStorage.getItem('userName')
 	console.log(oscar)
 
 	function renderNominees(
@@ -93,11 +94,17 @@ function Home() {
 				})
 			})
 	}
-	async function saveNominee(nominee: string, category: string) {
+	async function saveNominee(
+		nominee: string,
+		category: string,
+		imgUrl: string
+	) {
 		await axios.post('https://crazy-duck-baseball-cap.cyclic.app/api/create', {
 			user,
 			category,
 			nominee,
+			imgUrl,
+			userName,
 		})
 		if (user) {
 			getVotes(user)

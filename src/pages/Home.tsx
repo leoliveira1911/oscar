@@ -81,7 +81,7 @@ function Home() {
 		const userGet = user
 		console.log('GET TASKS NA ÁREA, BEATCHES')
 		axios
-			.get('https://tame-calf-kimono.cyclic.app/api/getVotes', {
+			.get('https://crazy-duck-baseball-cap.cyclic.app/api/getVotes', {
 				params: {
 					user: userGet,
 				},
@@ -94,7 +94,7 @@ function Home() {
 			})
 	}
 	async function saveNominee(nominee: string, category: string) {
-		await axios.post('https://tame-calf-kimono.cyclic.app/api/create', {
+		await axios.post('https://crazy-duck-baseball-cap.cyclic.app/api/create', {
 			user,
 			category,
 			nominee,

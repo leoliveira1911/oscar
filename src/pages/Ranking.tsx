@@ -25,7 +25,7 @@ export default function Ranking() {
 
 	function getRanking() {
 		axios
-			.get('https://tame-calf-kimono.cyclic.app/api/getRanking')
+			.get('https://crazy-duck-baseball-cap.cyclic.app/api/getRanking')
 			.then(data => data.data)
 			.then(setRanking)
 		// .then(data => setRanking(data.data))

@@ -5,5 +5,5 @@ interface TitleProps {
 }
 
 export default function Title(props: TitleProps) {
-	return <h1 className="self-center text-5xl">{props.title}</h1>
+	return <h1 className="self-center text-center text-5xl">{props.title}</h1>
 }

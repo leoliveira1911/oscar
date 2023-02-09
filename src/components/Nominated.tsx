@@ -22,7 +22,7 @@ export default function Nominated(props: NominatedProps) {
         hover:bg-opacity-100
 
     `}>
-			<div className="flex flex-1 justify-center">
+			<div className="flex flex-1 justify-between text-left m-3">
 				<div className="flex flex-col">
 					<h1 className="text-lg">{props.name}</h1>
 					<h2 className="text-sm">{props.label}</h2>
@@ -31,6 +31,7 @@ export default function Nominated(props: NominatedProps) {
 			<img
 				src={props.img}
 				width="100"
+				height="100"
 				alt={props.name}
 			/>
 		</div>

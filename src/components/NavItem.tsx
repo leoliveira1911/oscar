@@ -11,7 +11,7 @@ export default function NavItem(props: NavItemProps) {
 			to={props.url}
 			className={`bg-black bg-opacity-50  flex justify-center items-center
                                 p-3 m-2 rounded-xl
-                                text-lg    
+                                text-lg    text-center
                                     `}>
 			{props.title}
 		</Link>

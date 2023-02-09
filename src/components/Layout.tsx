@@ -23,7 +23,7 @@ export default function Layout(props: LayoutProps) {
 	}, [])
 	return (
 		<div className="flex flex-col h-screen bg-[#ebab47]">
-			<div className="flex-none h-28 bg-[#ebab47]">
+			<div className="flex-1 h-48 bg-[#ebab47]">
 				<NavBar title={props.title} />
 			</div>
 			<div className="flex-1 bg-[#ebab47]">

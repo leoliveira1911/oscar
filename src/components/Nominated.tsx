@@ -30,9 +30,8 @@ export default function Nominated(props: NominatedProps) {
 			</div>
 			<img
 				src={props.img}
-				width="100"
-				height="100"
 				alt={props.name}
+				className="w-1/5 rounded-md m-1"
 			/>
 		</div>
 	)

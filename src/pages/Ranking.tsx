@@ -26,7 +26,7 @@ export default function Ranking() {
 
   function getRanking() {
     axios
-      .get("http://localhost:3002/getRanking")
+      .get("https://crazy-duck-baseball-cap.cyclic.app/getRanking")
       .then((data) => data.data)
       .then(setRanking);
     // .then(data => setRanking(data.data))

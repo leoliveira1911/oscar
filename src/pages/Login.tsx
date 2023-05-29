@@ -16,7 +16,7 @@ export default function Login() {
       console.log("função add");
       console.log(userUID, userDisplayName);
       await axios
-        .post("http://localhost:3002/addUser", {
+        .post("https://crazy-duck-baseball-cap.cyclic.app/addUser", {
           userUID,
           userDisplayName,
         })

@@ -81,7 +81,7 @@ function Home() {
   async function getVotes(user: string) {
     const userGet = user;
     axios
-      .get("http://localhost:3002/getVotes", {
+      .get("hhttps://crazy-duck-baseball-cap.cyclic.app/getVotes", {
         params: {
           user: userGet,
         },
@@ -97,7 +97,7 @@ function Home() {
     category: string,
     imgUrl: string
   ) {
-    await axios.post("http://localhost:3002/create", {
+    await axios.post("https://crazy-duck-baseball-cap.cyclic.app/create", {
       user,
       category,
       nominee,

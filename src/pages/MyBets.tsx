@@ -24,7 +24,7 @@ export default function MyBets() {
     const userGet = user;
     console.log("GET TASKS NA ÁREA, BEATCHES");
     await axios
-      .get("http://localhost:3002/getVotes", {
+      .get("https://crazy-duck-baseball-cap.cyclic.app/getVotes", {
         params: {
           user: userGet,
         },

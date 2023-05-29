@@ -81,7 +81,7 @@ function Home() {
   async function getVotes(user: string) {
     const userGet = user;
     axios
-      .get("hhttps://crazy-duck-baseball-cap.cyclic.app/getVotes", {
+      .get("https://crazy-duck-baseball-cap.cyclic.app/getVotes", {
         params: {
           user: userGet,
         },
